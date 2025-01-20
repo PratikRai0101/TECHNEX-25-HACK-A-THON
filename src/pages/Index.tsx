@@ -25,6 +25,40 @@ const Index = () => {
     setEmail("");
   };
 
+  const scrollToTop = () => {
+    const scrollDuration = 1000; // Duration of the scroll in milliseconds
+    const startingPosition = window.pageYOffset;
+    const distance = -startingPosition;
+    let startTime: number;
+
+    const animateScroll = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const scrollStep = easeInOut(
+        timeElapsed,
+        startingPosition,
+        distance,
+        scrollDuration
+      );
+
+      window.scrollTo(0, scrollStep);
+
+      if (timeElapsed < scrollDuration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    // Start the animation
+    requestAnimationFrame(animateScroll);
+  };
+
+  // Easing function for smooth scroll
+  const easeInOut = (t: number, b: number, c: number, d: number) => {
+    let ts = (t /= d) * t;
+    let tc = ts * t;
+    return b + c * (tc + -3 * ts + 3 * t);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -75,7 +109,7 @@ const Index = () => {
                 Accessible for Everyone
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white ">
+            <p className="text-xl md:text-2xl text-white">
               An innovative platform designed for everyone, including specially
               abled people. Coming soon.
             </p>
@@ -116,58 +150,74 @@ const Index = () => {
         </div>
       </main>
 
+      {/* New Hero Section (Second Section) */}
+      <section className="relative pt-24 pb-20 flex flex-col items-center text-center bg-cover bg-center">
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="container mx-auto z-10 px-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+            Experience the Future of Communication
+          </h1>
+          <p className="mt-6 text-xl sm:text-2xl">
+            Revolutionizing how we connect with technology for everyone.
+          </p>
+          <div className="flex justify-center w-full">
+            <Button className="mt-8 px-8 py-4 text-lg flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-gradient-to-l">
+              Get Started <ChevronRight className="ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center">Our Features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {/* Feature Card 1 */}
+            <div className="bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold">Innovative Design</h3>
+              <p className="mt-4 text-gray-400">
+                We provide cutting-edge designs that enhance user experience.
+              </p>
+            </div>
+            {/* Feature Card 2 */}
+            <div className="bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold">User-Centric</h3>
+              <p className="mt-4 text-gray-400">
+                Designed with the user in mind for seamless interactions.
+              </p>
+            </div>
+            {/* Feature Card 3 */}
+            <div className="bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold">Scalable Solutions</h3>
+              <p className="mt-4 text-gray-400">
+                Our platform grows with your needs, providing scalable
+                solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-16 bg-gray-800 text-center text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-6">
+            Join Us Today and Change the Way You Connect
+          </h2>
+          <Button
+            onClick={scrollToTop} // Smooth scroll when clicked
+            className="px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-gradient-to-l"
+          >
+            Sign Up Now
+          </Button>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="relative z-10 bg-background/80 backdrop-blur-sm border-t">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">About AccessVerse</h3>
-              <p className="text-sm text-gray-200">
-                Making the metaverse accessible for everyone through innovative
-                technology and inclusive design.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm text-gray-200 hover:text-purple-400 transition-colors"
-                  >
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm text-gray-200 hover:text-purple-400 transition-colors"
-                  >
-                    Roadmap
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className="text-sm text-gray-200 hover:text-purple-400 transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Contact</h3>
-              <p className="text-sm text-gray-200">
-                Email: hello@accessverse.com
-                <br />
-                Follow us on Twitter @AccessVerse
-              </p>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-            © 2024 AccessVerse. All rights reserved.
-          </div>
+      <footer className="bg-gray-900 text-gray-400 py-8">
+        <div className="container mx-auto text-center">
+          <p>© 2024 Zep. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

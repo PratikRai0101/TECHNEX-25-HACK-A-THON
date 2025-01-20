@@ -122,7 +122,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">About AccessVerse</h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-200">
                 Making the metaverse accessible for everyone through innovative
                 technology and inclusive design.
               </p>
@@ -133,7 +133,7 @@ const Index = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-sm text-gray-200 hover:text-purple-400 transition-colors"
                   >
                     Features
                   </a>
@@ -141,7 +141,7 @@ const Index = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-sm text-gray-200 hover:text-purple-400 transition-colors"
                   >
                     Roadmap
                   </a>
@@ -149,7 +149,7 @@ const Index = () => {
                 <li>
                   <Link
                     to="/about"
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-sm text-gray-200 hover:text-purple-400 transition-colors"
                   >
                     About Us
                   </Link>
@@ -158,7 +158,7 @@ const Index = () => {
             </div>
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Contact</h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-200">
                 Email: hello@accessverse.com
                 <br />
                 Follow us on Twitter @AccessVerse

@@ -176,25 +176,60 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {/* Feature Card 1 */}
             <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Innovative Design</h3>
-              <p className="mt-4 text-gray-400">
-                We provide cutting-edge designs that enhance user experience.
-              </p>
+              <h3 className="text-xl font-semibold">
+                Adaptive Navigation Suite
+              </h3>
+              <ul className="mt-4 text-gray-400">
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  "Guide Dog" AI companion that helps with wayfinding and
+                  obstacle avoidance
+                </li>
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  Context-aware teleportation system that suggests relevant
+                  destinations
+                </li>
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  Gesture-free movement options using eye tracking or voice
+                  commands
+                </li>
+              </ul>
             </div>
             {/* Feature Card 2 */}
             <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">User-Centric</h3>
-              <p className="mt-4 text-gray-400">
-                Designed with the user in mind for seamless interactions.
-              </p>
+              <h3 className="text-xl font-semibold">Sensory Profile System</h3>
+              <ul className="mt-4 text-gray-400">
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  Customizable avatar "auras" that indicate user preferences.
+                </li>
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  Automatic environment adjustments based on user profiles.
+                </li>
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  Personal "safe space" bubble that users can activate when
+                  feeling overwhelmed.
+                </li>
+              </ul>
             </div>
             {/* Feature Card 3 */}
             <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Scalable Solutions</h3>
-              <p className="mt-4 text-gray-400">
-                Our platform grows with your needs, providing scalable
-                solutions.
-              </p>
+              <h3 className="text-xl font-semibold">
+                Communication Enhancement Tools
+              </h3>
+              <ul className="mt-4 text-gray-400">
+                <li className="mb-2 flex items-left gap-2">
+                  Real-time sign language interpretation for avatars
+                </li>
+                <li className="mb-2 justify-center flex items-left gap-2">
+                  Emotion visualization system that displays mood indicators for
+                  non-verbal users
+                </li>
+                <li className="mb-2  flex items-center gap-2">
+                  Text-to-speech with customizable voices and speeds
+                </li>
+                <li className="mb-2 justify-center flex items-center gap-2">
+                  Symbol-based communication boards for non-verbal interactions
+                </li>
+              </ul>
             </div>
           </div>
         </div>

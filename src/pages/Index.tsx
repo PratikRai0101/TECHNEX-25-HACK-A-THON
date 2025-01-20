@@ -30,18 +30,21 @@ const Index = () => {
       {/* Header */}
       <header className="fixed w-full z-50 bg-opacity-90 bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+          <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
             AccessVerse
           </div>
           <nav className="flex items-center gap-6">
             <a
               href="#contact"
-              className="flex items-center gap-2 hover:text-purple-600 transition-colors"
+              className="flex items-center gap-2 hover:text-purple-400 transition-colors"
             >
               <Mail className="w-4 h-4" />
               Contact Us
             </a>
-            <Button variant="outline" className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 bg-purple-600"
+            >
               <Globe className="w-4 h-4" />
               Explore Metaverse
             </Button>
@@ -72,7 +75,7 @@ const Index = () => {
                 Accessible for Everyone
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200">
+            <p className="text-xl md:text-2xl text-white ">
               An innovative platform designed for everyone, including specially
               abled people. Coming soon.
             </p>
@@ -87,7 +90,7 @@ const Index = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-12 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white"
               />
               <Button
                 type="submit"
@@ -103,7 +106,7 @@ const Index = () => {
               <Link to="/about">
                 <Button
                   variant="outline"
-                  className="text-lg border-white/20 text-white hover:bg-white/10 transition-all duration-300"
+                  className="text-lg border-white/20 text-white hover:bg-purple-600/10 transition-all duration-300"
                 >
                   Learn About Us
                 </Button>

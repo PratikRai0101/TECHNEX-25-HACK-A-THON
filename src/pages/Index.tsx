@@ -26,7 +26,7 @@ const Index = () => {
   };
 
   const scrollToTop = () => {
-    const scrollDuration = 1000; // Duration of the scroll in milliseconds
+    const scrollDuration = 1000;
     const startingPosition = window.pageYOffset;
     const distance = -startingPosition;
     let startTime: number;
@@ -48,11 +48,9 @@ const Index = () => {
       }
     };
 
-    // Start the animation
     requestAnimationFrame(animateScroll);
   };
 
-  // Easing function for smooth scroll
   const easeInOut = (t: number, b: number, c: number, d: number) => {
     let ts = (t /= d) * t;
     let tc = ts * t;
@@ -161,8 +159,11 @@ const Index = () => {
             Revolutionizing how we connect with technology for everyone.
           </p>
           <div className="flex justify-center w-full">
-            <Button className="mt-8 px-8 py-4 text-lg flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-gradient-to-l">
-              Get Started <ChevronRight className="ml-2" />
+            <Button
+              onClick={scrollToTop}
+              className="mt-8 px-8 py-4 text-lg flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-gradient-to-l"
+            >
+              Get Started
             </Button>
           </div>
         </div>
@@ -206,7 +207,7 @@ const Index = () => {
             Join Us Today and Change the Way You Connect
           </h2>
           <Button
-            onClick={scrollToTop} // Smooth scroll when clicked
+            onClick={scrollToTop}
             className="px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-gradient-to-l"
           >
             Sign Up Now

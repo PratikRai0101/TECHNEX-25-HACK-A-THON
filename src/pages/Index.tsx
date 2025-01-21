@@ -73,13 +73,19 @@ const Index = () => {
               <Mail className="w-4 h-4" />
               Contact Us
             </a>
-            <Button
-              variant="outline"
-              className="flex items-center gap-2 bg-purple-600"
+            <a
+              href="https://precious-donut-d4cd23.netlify.app/" // Replace this with your actual link
+              target="_blank" // Opens in a new tab
+              rel="noopener noreferrer" // Ensures security
             >
-              <Globe className="w-4 h-4" />
-              Explore Metaverse
-            </Button>
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 bg-purple-600"
+              >
+                <Globe className="w-4 h-4" />
+                Explore Metaverse
+              </Button>
+            </a>
           </nav>
         </div>
       </header>
